@@ -7,6 +7,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  flex-grow: 1;
 }
 
 body {
@@ -44,20 +45,57 @@ a:hover {
   list-style: none;
   margin: 0;
   padding: 0;
+  /* min-width: 16%; */
+  display: flex;
+  /* min-height: 1vh; */
+  flex-wrap: wrap;
+  /* flex-direction: row; */
 }
 
+
+/* half screen */
 @media all and (max-width: 1000px) {
 
-  * {
-    background-color: black;
+
+  .flex-nav ul li {
+    width: 50%;
+  }
+
+
+
+
+  .social {
+    /* background-color: black; */
+    /* this is just width in the correction, why? */
+    max-width: 25%;
+
+
+
   }
 
 }
 
+/* as small as possible */
 @media all and (max-width: 500px) {
-  * {
-    background-color: black;
+  /* * {
+  } */
+
+  .flex-nav ul li {
+    width: 1000%;
   }
+
+
+
+
+  .social {
+    /* background-color: pink; */
+    /* this is just width in the correction, why? */
+    max-width: 25%;
+
+
+
+  }
+
 
 }
 
