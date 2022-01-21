@@ -1,6 +1,74 @@
+video {
+    width: 100%;
+}
+
+img.bg {
+    display: none;
+
+}
 
 
 /* handling the top bar: https://stackoverflow.com/questions/3593594/how-to-keep-the-header-static-always-on-top-while-scrolling/58645785#58645785 */
+#top_bar {
+    width: 100vw;
+    display: flex;
+
+}
+
+#top_right_logo {
+    align-self: center;
+}
+
+
+
+#bottom_bar {
+    width: 100vw;
+}
+
+/* always full height
+always top left corner
+#top_right_logo {
+
+} */
+
+/* 
+half the height of the top bar/logo
+white on dark grey
+ */
+ #top_bar_upper {
+    background-color: rgb(75, 73, 73);
+    flex-flow: row;
+    color: white;
+    width: 100vw;
+
+    /* display: inline; */
+
+}
+
+#top_shop_collapsible {
+    background-color: red;
+}
+
+#top_club_collapsible {
+    background-color: black;
+}
+
+#top_members {
+    background-color: rgb(180, 138, 32);
+}
+
+a {
+    text-decoration: none;
+}
+
+#top_bar_upper a {
+    color: white;
+}
+
+/* https://stackoverflow.com/questions/2076109/how-to-avoid-a-new-line-with-p-tag */
+.pipe { 
+    display: inline;
+}
 
 /* boolean operators in css AND and OR https://stackoverflow.com/questions/2797091/css-and-and-or */
 
