@@ -267,7 +267,7 @@ div.row_thumbs {
     /* flex-flow: column; */
     min-height: 100px;
     width: 75%
-    max-width: 100%;
+    /* max-width: 100%; */
 
 }
 
