@@ -1,48 +1,83 @@
-video {
-    width: 100%;
+/* why margin top and left side? */
+* {
+    box-sizing: border-box;
+    justify-content: center;
 }
 
-img.bg {
-    display: none;
-
+a {
+    color: black;
+    text-decoration: none;
 }
 
+/* https://stackoverflow.com/questions/2076109/how-to-avoid-a-new-line-with-p-tag */
+.pipe { 
+    display: inline;
+    color: white;
+}
 
-/* handling the top bar: https://stackoverflow.com/questions/3593594/how-to-keep-the-header-static-always-on-top-while-scrolling/58645785#58645785 */
+/* TODO wooop this goes under the video: z-axis fix? */
 #top_bar {
+    z-index: 1;
     width: 100vw;
     display: flex;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: aqua;
+    flex-flow: row wrap;
+    /* flex-flow: column; */
+    min-height: 50px;
+    /* justify-content: center; */
 }
 
-#top_right_logo {
-    align-self: center;
+
+/*
+TODO add margin
+*/
+/* a id="top_right_logo" href=""><img */
+
+div#logo img {
+    padding: 10px;
+    height: 100%;
+    max-width: fit-content;
+    left: 0;
 }
 
-
-
-#bottom_bar {
-    width: 100vw;
+div#navbar {
+    flex-grow: grow;
 }
 
-/* always full height
-always top left corner
-#top_right_logo {
-
-} */
 
 /* 
-half the height of the top bar/logo
-white on dark grey
+TODO
+centre text vertically
+expand on the whole screen
  */
  #top_bar_upper {
     background-color: rgb(75, 73, 73);
-    flex-flow: row;
+    /* flex-flow: column; */
+    /* color: white; */
+    height: 50%;
+    min-width: 51%;
+
+}
+
+#top_bar_upper a {
     color: white;
-    width: 100vw;
+}
 
-    /* display: inline; */
+#top_bar_upper div {
+    display: inline;
+}
+#top_bar_lower div {
+    display: inline;
+}
 
+
+#top_bar_lower {
+    background-color: white;
+    height: 50%;
+    min-width: 51%;
 }
 
 #top_shop_collapsible {
@@ -57,25 +92,211 @@ white on dark grey
     background-color: rgb(180, 138, 32);
 }
 
-a {
-    text-decoration: none;
+
+/* displaying the video in the bg https://www.w3schools.com/howto/howto_css_fullscreen_video.asp */
+
+video {
+    width: 100%;
+    /* min-width: 100%; */
+    /* min-height: 100%; */
+    background: rgba(0, 0, 0, 0.5);
 }
 
-#top_bar_upper a {
+img.bg {
+    display: none;
+}
+
+/* position needs fixing */
+#main_screen {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+
+  }
+
+
+/* Centered text example */
+/* .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  } */
+  
+
+/* position needs fixing */
+div.fg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  }
+/* position needs fixing */
+/* div.fg {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    bottom: 0%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  } */
+
+.fg #title {
+    font-size: xx-large;
+}
+
+.fg a {
     color: white;
 }
 
-/* https://stackoverflow.com/questions/2076109/how-to-avoid-a-new-line-with-p-tag */
-.pipe { 
-    display: inline;
+/* TODO center justify this OR make width 100% and center things inside */
+div#lower_content {
+    width: 100%;
+    background-color: chocolate;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center
+
+
+    
 }
+
+
+/* TODO needs to go all the way down? */
+div#weekly_recommends {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    background-color: blue;
+}
+
+
+div.three_features{
+    width: 60%;
+    background-color: yellow;
+    flex-flow: row wrap;
+    /* flex-flow: column; */
+    min-height: 100px;
+    display: flex;
+}
+
+p.three_feat_title {
+    width: 100%;
+}
+
+
+div.main_feat {
+    width: 66%;
+    background-color: blue;
+}
+
+/* 
+
+    <img src="https://media-cdn.greatbritishchefs.com/media/yhljkvnh/img55719.jpg?mode=crop&width=520&height=347" alt="Biscuits">
+    <a href="">
+        <p class="main_title" >Oreo Night</p>
+        <p class="main_subtitle">Recipe collection</p>
+    </a>
+    <p class="main_summary">Beautiful content. Written by a great writer, Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur saepe repellat esse cumque sunt vero nostrum eos ullam accusamus rem explicabo ad aspernatur quibusdam necessitatibus perspiciatis vel unde, harum sed.</p>
+</div>
+<div class="secondary_feat">
+    <div class="s_feat_top">
+        <a href="">
+            <img src="https://media-cdn.greatbritishchefs.com/media/xrga0epj/img29188.jpg?mode=crop&width=520&height=347" alt="More Biscuits"> */
+
+
+
+.main_feat img {
+    width: 100%;
+}
+
+div.secondary_feat {
+    width: 33%;
+    height: 60%;
+    background-color: green;
+}
+
+
+.secondary_feat img {
+    width: 100%;
+}
+
+
+p.three_feat_title {
+    font-size: x-large;
+    width: 100%;
+}
+
+p.thumb_title {
+    font-size: x-large;
+}
+
+p.s_feat_title {
+    font-size: x-large;
+}
+
+p.s_feat_title {
+    font-size: x-large;
+}
+
+p.main_title {
+    font-size: x-large;
+}
+
+
+
+
+
+div.row_thumbs {
+    display: flex;
+    background-color: pink;
+    flex-flow: row wrap;
+    /* flex-flow: column; */
+    min-height: 100px;
+    width: 75%
+    max-width: 100%;
+
+}
+
 
 /* boolean operators in css AND and OR https://stackoverflow.com/questions/2797091/css-and-and-or */
 
-/* displaying the video in the bg https://www.w3schools.com/howto/howto_css_fullscreen_video.asp */
 
 /* a + img on hover => decrease alpha */
 
 /* if video and @media under a size make invisible */
 
 /* if img and @media over a size make invisible */
+
+/* if thumb and @media under a size make invisible */
+
+
+/* DONE */
+/* handling the top bar: https://stackoverflow.com/questions/3593594/how-to-keep-the-header-static-always-on-top-while-scrolling/58645785#58645785 */
+
+
+
+/* div id="top_bar" fixed + whole width + max height = height of logo + flexbox parent + prevent things from going behind
+    div id="logo" full size + stick to the left
+    div id="navbar" stick to the right + grow on the same line + flexbox parent + add black border at bottom
+            div id="top_bar_upper" height = 50% + black bg + white txt + width 100% (+flexbox parent?)
+    div id="main_screen" height = vh - navbar (add white space the size of navbar at the top?)
+        div class="fg" pin in the middle of the screen
+            div id="weekly_button" pin at the bottom of the screen above weekly_recommends
+    div id="lower_content" flexbox parent + restricts use of screen to middle
+        div id="weekly_recommends" pinned
+            ADD AN EXTRA DIV WRAPPING EVERYTHING THAT IS ALSO A FLEXBOX PARENT TO KEEP THREE FEATURES AND THUMBS ON THE RIGHT SIDE
+        div class="three_features" */
