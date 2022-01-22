@@ -9,42 +9,78 @@ a {
     text-decoration: none;
 }
 
-/* https://stackoverflow.com/questions/2076109/how-to-avoid-a-new-line-with-p-tag */
 .pipe { 
     display: inline;
     color: white;
 }
 
-/* TODO wooop this goes under the video: z-axis fix? */
+
+
+/* 
+TODO 
+max height = height of logo
+*/
 #top_bar {
     z-index: 1;
     width: 100vw;
     display: flex;
+    flex-flow: column wrap;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: aqua;
-    flex-flow: row wrap;
+    background-color: orange;
     /* flex-flow: column; */
-    min-height: 50px;
+    min-height: 81px;
+    /* max-height: 81px; */
     /* justify-content: center; */
+    /* border-bottom: 2px; */
+    border-bottom-color: black;
+    border-bottom-width: 4px;
+    border-bottom-style: solid;
+    max-height: 100px;
+
 }
 
 
 /*
 TODO add margin
 */
-/* a id="top_right_logo" href=""><img */
 
+
+/* 
+a id="top_right_logo" href=""><img 
+    div id="logo" full size + stick to the left
+*/
+
+div#logo {
+    height: 100%;
+    max-width: 20%;
+    /* background-color: red; */
+    left: 0;
+}
 div#logo img {
     padding: 10px;
     height: 100%;
-    max-width: fit-content;
     left: 0;
 }
 
-div#navbar {
-    flex-grow: grow;
+/* div id="nav_bar" stick to the right + grow on the same line + flexbox parent + add black border at bottom 
+why is this not the whole length?
+DONE: 
+*/
+div#nav_bar {
+    /* top: 0; */
+    /* right: 0; */
+    height: 100%;
+    max-width: 90%;
+    /* width: 100%; */
+    /* width: 100%; */
+    display: flex;
+    flex-flow: column wrap;
+    /* flex-grow: 1; */
+    background-color: aqua;
+    /* align-items: center; */
+
 }
 
 
@@ -52,13 +88,20 @@ div#navbar {
 TODO
 centre text vertically
 expand on the whole screen
+            div id="top_bar_upper" height = 50% + black bg + white txt + width 100% (+flexbox parent?)
+
  */
  #top_bar_upper {
     background-color: rgb(75, 73, 73);
-    /* flex-flow: column; */
+    display: flex;
+    flex-flow: row wrap;
     /* color: white; */
     height: 50%;
-    min-width: 51%;
+    width: 100%;
+    justify-content: space-between;
+
+    /* flex-grow: 1; */
+
 
 }
 
@@ -77,7 +120,12 @@ expand on the whole screen
 #top_bar_lower {
     background-color: white;
     height: 50%;
-    min-width: 51%;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+
 }
 
 #top_shop_collapsible {
@@ -92,6 +140,14 @@ expand on the whole screen
     background-color: rgb(180, 138, 32);
 }
 
+div#spacer {
+    /* position: sticky; */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 81px;
+
+}
 
 /* displaying the video in the bg https://www.w3schools.com/howto/howto_css_fullscreen_video.asp */
 
@@ -106,8 +162,13 @@ img.bg {
     display: none;
 }
 
-/* position needs fixing */
+/* position needs fixing 
+    div id="main_screen" height = vh - nav_bar (add white space the size of nav_bar at the top?)
+*/
+
 #main_screen {
+    /* margin-top: 79px; */
+    
     position: relative;
     text-align: center;
     color: white;
@@ -127,7 +188,12 @@ img.bg {
   } */
   
 
-/* position needs fixing */
+
+
+
+/* position needs fixing 
+        div class="fg" pin in the middle of the screen
+        */
 div.fg {
     position: absolute;
     top: 50%;
@@ -160,33 +226,57 @@ div.fg {
     color: white;
 }
 
+
+/* 
+TODO 
+    div id="lower_content" flexbox parent + restricts use of screen to middle
+*/
 /* TODO center justify this OR make width 100% and center things inside */
 div#lower_content {
     width: 100%;
-    background-color: chocolate;
+    /* background-color: chocolate; */
     display: flex;
     flex-flow: row wrap;
     justify-content: center
-
-
-    
 }
 
 
-/* TODO needs to go all the way down? */
+
+/* 
+TODO 
+            div id="weekly_button" pin at the bottom of the screen above weekly_recommends
+*/
+
+
+
+
+
+/* TODO needs to go all the way down? 
+        div id="weekly_recommends" pinned
+*/
 div#weekly_recommends {
+
     position: sticky;
-    top: 0;
+    top: 79px;
     left: 0;
     width: 15%;
     height: 100%;
-    background-color: blue;
+    /* background-color: blue; */
+}
+div#content_column {
+    width: 60%;
+
 }
 
-
+/* 
+TODO 
+        div class="three_features" 
+            ADD AN EXTRA DIV WRAPPING EVERYTHING THAT IS ALSO A FLEXBOX PARENT TO KEEP THREE FEATURES AND THUMBS ON THE RIGHT SIDE
+        div class="three_features" 
+*/
 div.three_features{
-    width: 60%;
-    background-color: yellow;
+    width: 100%;
+    /* background-color: yellow; */
     flex-flow: row wrap;
     /* flex-flow: column; */
     min-height: 100px;
@@ -200,7 +290,7 @@ p.three_feat_title {
 
 div.main_feat {
     width: 66%;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 /* 
@@ -226,7 +316,7 @@ div.main_feat {
 div.secondary_feat {
     width: 33%;
     height: 60%;
-    background-color: green;
+    /* background-color: green; */
 }
 
 
@@ -262,13 +352,16 @@ p.main_title {
 
 div.row_thumbs {
     display: flex;
-    background-color: pink;
+    /* background-color: pink; */
     flex-flow: row wrap;
     /* flex-flow: column; */
     min-height: 100px;
-    width: 75%
+    width: 100%
     /* max-width: 100%; */
+}
 
+div.thumb {
+    width: 20%;
 }
 
 
@@ -289,14 +382,27 @@ div.row_thumbs {
 
 
 
-/* div id="top_bar" fixed + whole width + max height = height of logo + flexbox parent + prevent things from going behind
+/* 
+TODO 
+div id="top_bar" fixed + whole width + max height = height of logo + flexbox parent + prevent things from going behind
+
     div id="logo" full size + stick to the left
-    div id="navbar" stick to the right + grow on the same line + flexbox parent + add black border at bottom
+    div id="nav_bar" stick to the right + grow on the same line + flexbox parent + add black border at bottom
             div id="top_bar_upper" height = 50% + black bg + white txt + width 100% (+flexbox parent?)
-    div id="main_screen" height = vh - navbar (add white space the size of navbar at the top?)
+    div id="main_screen" height = vh - nav_bar (add white space the size of nav_bar at the top?)
         div class="fg" pin in the middle of the screen
             div id="weekly_button" pin at the bottom of the screen above weekly_recommends
     div id="lower_content" flexbox parent + restricts use of screen to middle
         div id="weekly_recommends" pinned
             ADD AN EXTRA DIV WRAPPING EVERYTHING THAT IS ALSO A FLEXBOX PARENT TO KEEP THREE FEATURES AND THUMBS ON THE RIGHT SIDE
-        div class="three_features" */
+        div class="three_features" 
+*/
+
+
+/* 
+DONE 
+prevent things from going behind nav_bar
+
+
+
+*/
